@@ -1,0 +1,40 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #333;
+  
+}
+.container {
+  width: 800px;
+  max-width: 80%;
+  background-color: #e6fff1;
+  padding: 10px;
+  border-radius: 5px;
+}
+.btn-grid {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 20px;
+  margin-top: 40px;
+}
+.btn {
+  background-color: hsl(152, 100%, 37%);
+  border: 2px solid hsl(152, 100%, 20%);
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: #ffffff;
+  outline: none;
+}
+.btn:hover{
+  background-color: darkgreen;
+}
