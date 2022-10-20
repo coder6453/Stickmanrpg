@@ -1,15 +1,18 @@
 const textElement = document.getElementById('text')
-const optionButtonsElement = document.getElemendById('options-buttons')
+const optionsButtonsElement = document.getElementById('option-buttons')
+
 let state = {}
-function startGame{
+
+function startGame() {
   state = {}
   showTextNode(1)
 }
+
 function showTextNode(textNodeIndex) {
-  const textNode = textNodes.find(textNode => textNode.id  === textNodeIndex)
+  const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
   textElement.innerText = textNode.text
-  while (optionButtonsElement.firstChild) {          
-optionButtonsElement.removeChild(optionButtonsElement.firstChild)
+  while (optionsButtonsElement.firstChild) {
+    optionsButtonsElement.removeChild(optionsButtonsElement.firstChild)
   }
 
   textNode.options.forEach(option => {
@@ -17,39 +20,78 @@ optionButtonsElement.removeChild(optionButtonsElement.firstChild)
       const button = document.createElement('button')
       button.innerText = option.text
       button.classList.add('btn')
-      button.addEventListener('click', () =>     
-      selectOption(option))
-      optionButtonsElement.appendChild(button)
+      button.addEventListener('click', () => selectOption(option))
+      optionsButtonsElement.appendChild(button)
     }
   })
 }
 
 function showOption(option) {
-  return true
+  return option.requiredState == null || option.requiredState(state)
+}
+function selectOption(option) {
+  const nextTextNodeId = option.nextText
+  if (nextTextNodeId <= 0) {
+    return startGame()
+  }
+  state = Object.assign(state, option.setState)
+  showTextNode(nextTextNodeId)
 }
 
 const textNodes = [
   {
     id: 1,
-    text: 'u r stuck in forst',
+    text: 'You walk into a forest.',
     options: [
       {
-        text: 'escape!!!!!',
-        setState: { uTried: true },
+        text: 'Leave',
         nextText: 2
       },
       {
-        text: 'pick up grass from the ground',
-        nextText: 2
+        text: 'Explore',
+        nextText: 3
       }
-
     ]
   },
   {
-    id: 2
-  }
-]
-function selectOption(option) {
+    id: 2,
+    text: 'You turn around to leave, but there is a strange glowing wall.',
+    options: [
+      {
+        text: 'Explore',
+        nextText: 3
+      },
+    ]
+  },
+  {
+    id: 3,
+    text: 'You walk deeper into the forest. You see three paths.',
+    options: [
+      {
+        text: 'Left',
+        nextText: 4
+      },
+      {
+        text: 'Continue forward',
+        nextText: 5
+      },
+      {
+        text: 'Right',
+        nextText: 6
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: 'You decide to take the path on the left',
+    options: [
+      {
+        text: 'awefawefoij',
 
-}
+        nextText: 5
+      }
+    ]
+  },
+]
+
 startGame()
