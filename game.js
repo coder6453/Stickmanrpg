@@ -83,14 +83,23 @@ const textNodes = [
   },
   {
     id: 4,
-    text: 'You decide to take the path on the left',
+    text: 'You decide to take the path on the left. There is a small house there. ',
     options: [
       {
-        text: 'awefawefoij',
-
-        nextText: 5
+        text: 'Enter house',
+        nextText: 7
+      },
+      {
+        text: 'Continue forward',
+        nextText: 8
       }
     ]
+  },
+  {
+    id: 5,
+    text: 'You continue the path. There is a lake and a bucket.',
+    
+      
   },
 ]
 
