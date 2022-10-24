@@ -97,10 +97,28 @@ const textNodes = [
   },
   {
     id: 5,
-    text: 'You continue the path. There is a lake and a bucket.',
-    
-      
+    text: 'You continue the path. The path splits again.',
+    options: [
+      {
+        text: 'Continue forward',//this results in running into a bear trap and restarting the game
+        nextText: 9
+      },
+      {
+        text: 'Go right.',
+        nextText: 10
+      }
+    ]
   },
+  {
+    id: 6,
+    text: 'You decide to go right. However you walk over a hole and fall to your death',
+    options: [
+      {
+        text: 'Restart',
+        nextText: -1
+      }
+    ]
+  }
 ]
 
 startGame()
