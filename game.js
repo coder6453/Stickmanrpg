@@ -127,8 +127,8 @@ const textNodes = [
         text: 'Restart',
         nextText: -1
       } 
-  ]
-}
+    ]
+  }
 ]
 
 startGame()
