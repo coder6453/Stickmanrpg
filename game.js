@@ -126,19 +126,19 @@ const textNodes = [
       {
         text: 'Restart',
         nextText: -1
-      } 
+      }
     ]
   },
   {
     id: 10,
-    text: 'You decided to go right. You come across a river.
+    text: 'You decided to go right. You come across a river.',
     options: [
       {
         text: 'Try to cross',
         nextText: 11
-       }
-     ]
-    }
-  ]
+      }
+    ]
+  }
+]
 
 startGame()
