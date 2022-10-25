@@ -111,7 +111,7 @@ const textNodes = [
   },
   {
     id: 6,
-    text: 'You decide to go right. However you walk into a hole and fall to your death.',
+    text: 'You decide to go right. However, you walk into a hole and fall to your death.',
     options: [
       {
         text: 'Restart',
