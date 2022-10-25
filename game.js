@@ -118,7 +118,17 @@ const textNodes = [
         nextText: -1
       }
     ]
-  }
+  },
+  {
+    id: 9
+    text: 'You decided to continue forward. But when you realized there was a bear trap in front of you, it was too late.',
+    options: [
+      {
+        text: 'Restart',
+        nextText: -1
+      } 
+  ]
+}
 ]
 
 startGame()
