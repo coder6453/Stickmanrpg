@@ -104,7 +104,7 @@ const textNodes = [
         nextText: 9
       },
       {
-        text: 'Go right.',
+        text: 'Go right',
         nextText: 10
       }
     ]
