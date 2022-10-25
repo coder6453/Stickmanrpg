@@ -137,8 +137,8 @@ const textNodes = [
         text: 'Try to cross',
         nextText: 11
        }
-    ]
-  }
-]
+     ]
+    }
+  ]
 
 startGame()
