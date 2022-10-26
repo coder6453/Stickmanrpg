@@ -100,7 +100,7 @@ const textNodes = [
     text: 'You continue the path. The path splits again.',
     options: [
       {
-        text: 'Continue forward',//this results in running into a bear trap and restarting the game
+        text: 'Continue forward',
         nextText: 9
       },
       {
@@ -116,6 +116,36 @@ const textNodes = [
       {
         text: 'Restart',
         nextText: -1
+      }
+    ]
+  },
+  {
+    id: 7,
+    text: 'You decide to enter the house. The house is empty. There is a book inside. ',
+    options: [
+      {
+        text: 'Read book',
+        nextText: 12
+      },
+      {
+        text: 'Take book with you',
+        setState: { book: true},
+        nextText: 8
+      }
+    ]
+  },
+  {
+    id: 8,
+    text: 'Walking through the forest, you find a small shop. There is a shopkeeper. They are intrested about the book you have.',
+    options: [
+      {
+       text: 'Trade book for a flute',
+       setState: { book: true},
+       nextText: 13
+      },
+      {
+        text: 'Ignore the shop',
+        nextText: 14
       }
     ]
   },
