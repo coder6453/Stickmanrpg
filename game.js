@@ -129,23 +129,28 @@ const textNodes = [
       },
       {
         text: 'Take book with you',
-        setState: { book: true},
+        setState: { book: true },
+        nextText: 8
+      },
+      {
+        text: 'Ignore the book',
         nextText: 8
       }
     ]
   },
   {
     id: 8,
-    text: 'Walking through the forest, you find a small shop. There is a shopkeeper. They are intrested about the book you have.',
+    text: 'Walking through the forest, you find a small shop. There is a shopkeeper inside the shop.',
     options: [
       {
-       text: 'Trade book for a flute',
-       setState: { book: true},
-       nextText: 13
+        text: 'Trade book for a flute',
+        requiredState: (currentState) => currentState.book,
+        setState: { book: false, flute: true },
+        nextText: 13
       },
       {
         text: 'Ignore the shop',
-        nextText: 14
+        nextText: 13
       }
     ]
   },
@@ -166,9 +171,89 @@ const textNodes = [
       {
         text: 'Try to cross',
         nextText: 11
+      },
+      {
+        text: 'Take the path on the left',
+        nextText: 17
       }
     ]
-  }
+  },
+  {
+    id: 11,
+    text: 'You decided to cross. You successfully get to the other side.',
+    options: [
+      {
+        text: 'Continue Forward',
+        nextText: 13
+      }
+    ]
+  },
+  {
+    id: 12,
+    text: 'You slowly open the book. However, when you open it, you get cursed.',
+    options: [
+      {
+        text: 'Restart',
+        nextText: -1
+      }
+    ]
+  },
+  {
+    id: 13,
+    text: 'You come across a big door.',
+    options: [
+      {
+        text: 'Play the flute',
+        requiredState: (currentState) => currentState.flute,
+        setState: { flute: false },
+        nextText: 14
+      },
+      {
+        text: 'Throw the book at the door',
+        requiredState: (currentState) => currentState.book,
+        setState: { book: false },
+        nextText: 15
+      },
+      {
+        text: 'Knock on the door',
+        nextText: 16
+      }
+    ]
+  },
+  {
+    id: 14,
+    text: 'You play the flute. It suddenly disappears. You turn the knob on the door and it opens. You find a switch on the ground. You look forward and also see a door.',
+    options: [
+      {
+        text: 'Pull the switch',
+        nextText: 18
+      },
+      {
+        text: 'Open the door',
+        nextText: 19
+      }
+    ]
+  },
+  {
+    id: 15,
+    text: 'You throw the book with all of your strength. It opens and explodes you and the door.',
+    options: [
+      {
+        text: 'Restart',
+        nextText: -1
+      }
+    ]
+  },
+  {
+    id: 16,
+    text: 'You knock and wait. Nothing happens and you starve to death.',
+    options: [
+      {
+        text: 'Restart',
+        nextText: -1
+      }
+    ]
+  },
 ]
 
 startGame()
