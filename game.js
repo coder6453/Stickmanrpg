@@ -246,7 +246,7 @@ const textNodes = [
   },
   {
     id: 16,
-    text: 'You knock and wait. Nothing happens and you starve to death.',
+    text: 'You knock and wait. You realize you were standing on a trapdoor. It opens and you fall to your death.',
     options: [
       {
         text: 'Restart',
