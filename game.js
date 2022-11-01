@@ -254,6 +254,36 @@ const textNodes = [
       }
     ]
   },
+  {
+    id: 17,
+    text: 'You go to the path on the left. However, you reach a dead end.',
+    options: [
+      {
+        text: 'Try to cross',
+        nextText: 11
+      }
+    ]
+  },
+  {
+    id: 18,
+    text: 'You pull the switch. Suddenly, the ground starts to shake. The ground falls apart and you fall into a big cave and are killed.',
+    options: [
+      {
+        text: 'Restart',
+        nextText: -1
+      }
+    ]
+  },
+  {
+    id: 19,
+    text: 'You turn the knob and pull. The door opens and you find a portal. You jump in and get teleported out of the forest.',
+    options: [
+      {
+        text: 'You win, Click to restart',
+        nextText: -1
+      }
+    ]
+  },
 ]
 
 startGame()
